@@ -1,87 +1,138 @@
-html, body, *{
-    color:white;
-    transition-duration: 0.8s;
-    margin:0;
+* {
+  transition-duration: 0.8s;
+  color: white;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  margin: 0;
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 16px 64px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 64px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .purple {
-    background-color: rgba(0, 0, 0, 0.232); 
-    color: rgb(255, 255, 255); 
-    border: 2px solid #892b83;
+  background-color: rgba(0, 0, 0, 0.232);
+  color: rgb(255, 255, 255);
+  border: 2px solid #892b83;
 }
 
 .purple:hover {
-    background-color: #892b83;
-    color: white;
+  background-color: #892b83;
+  color: white;
 }
-
 
 .check {
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
 }
-
 
 #myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    zoom: 50%;
-    filter: brightness(0.6);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  zoom: 50%;
+  filter: brightness(0.6);
 }
-
 
 .flex {
-    display:flex;
+  display: flex;
 }
 
-.main{
-    font-family: "Sofia", sans-serif;
-    font-size:90px;
-    color: white;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column
+.title {
+  font-family: "Sofia", sans-serif;
+  font-size: 90px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .app {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    position: fixed;
-    background-color: rgb(54, 43, 65);
-    padding: 15px;
-    /* width: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  position: fixed;
+  background-color: rgb(54, 43, 65);
+  padding: 15px;
+  /* width: 100%;
     height: 100%; */
 }
 
-.settings{
-    flex-direction: column;
+.opt {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.vol {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 10px;
+  border-radius: 3px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.vol:hover {
+  opacity: 1;
+}
+
+.vol::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.vol::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.check {
+    height: 25px;
+    width: 25px;
+}
+.settings {
+  flex-direction: column;
 }
 
 .cat {
-    flex-direction: column;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 25px;
 }
 
 p {
-    width:100px;
-    margin-right: 20px;
+  width: 200px;
+  margin-right: 20px;
+  font-size: 20px;
 }
