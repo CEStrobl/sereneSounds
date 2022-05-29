@@ -4,9 +4,11 @@ let app = document.getElementById("app")
 
 let random = ""
 
-let bgsTitle = ["snowfall", "ocean", "clouds", "autumntrees", "waterdrop"]
+let bgsTitle = ["snowfall", "ocean", "clouds", "autumntrees",]
 
-let AudioLibrary = [seagulls, waves, rain, night, runningwater, birdschirp, ]
+let AudioLibrary = [waves, jbirds, rain1, night, runningwater, birdschirp, seagulls,
+  wind, breakfast, cafe1, cafe2, fireplace, library, paper, rain2, storm, highway, river, mouse,
+ocean, pencil1,pencil2, storm2, clock, page, typewriter, typing, ]
 
 function randomTitle() {
     let r = Math.floor(Math.random() * bgsTitle.length)

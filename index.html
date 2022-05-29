@@ -9,35 +9,97 @@
     <title>Serene Sounds</title>
 </head>
 <body>
-    <video autoplay muted loop id="myVideo" style="display: flex;">
-        <source
-          id="myVideo2"
-          src="img/live/clouds.mp4"
-          type="video/mp4"
-        />
-      </video>
-
-      <audio id="waves">
-        <source src="aud/sound/waves-gentle.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="jbirds">
-        <source src="aud/sound/junglebirds.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="rain">
-        <source src="aud/sound/light-rain.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="night">
-        <source src="aud/sound/night-ambience.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="runningwater">
-        <source src="aud/sound/running-water.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="birdschirp">
-        <source src="aud/sound/birds-chirping.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="seagulls">
-        <source src="aud/sound/seagulls.mp3" type="audio/mpeg">
-      </audio>
+    <div>
+        <video autoplay muted loop id="myVideo" style="display: flex;">
+            <source
+              id="myVideo2"
+              src="img/live/clouds.mp4"
+              type="video/mp4"
+            />
+          </video>
+    
+          <audio id="waves">
+            <source src="aud/sound/waves-gentle.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="jbirds">
+            <source src="aud/sound/junglebirds.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="rain1">
+            <source src="aud/sound/light-rain.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="night">
+            <source src="aud/sound/night-ambience.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="runningwater">
+            <source src="aud/sound/running-water.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="birdschirp">
+            <source src="aud/sound/birds-chirping.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="seagulls">
+            <source src="aud/sound/seagulls.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="wind">
+            <source src="aud/sound/autumn-wind.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="breakfast">
+            <source src="aud/sound/breakfast_soundscape.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="cafe1">
+            <source src="aud/sound/cafe-ambience.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="cafe2">
+            <source src="aud/sound/cafe2.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="fireplace">
+            <source src="aud/sound/fireplace.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="library">
+            <source src="aud/sound/library.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="paper">
+            <source src="aud/sound/handling-paper.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="rain2">
+            <source src="aud/sound/heavyrain.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="storm">
+            <source src="aud/sound/midnight-storm.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="highway">
+            <source src="aud/sound/highway.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="river">
+            <source src="aud/sound/mountainriver.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="mouse">
+            <source src="aud/sound/mouseclicks.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="ocean">
+            <source src="aud/sound/ocean.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="pencil1">
+            <source src="aud/sound/pencil.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="pencil2">
+            <source src="aud/sound/pencil2.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="storm2">
+            <source src="aud/sound/storm.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="clock">
+            <source src="aud/sound/ticking-clock.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="page">
+            <source src="aud/sound/turning-a-page.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="typewriter">
+            <source src="aud/sound/tyewriter.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="typing">
+            <source src="aud/sound/typing.mp3" type="audio/mpeg">
+          </audio>
+    </div>
 
     <!-- Title Screen -->
     <div class="flex title" id="title">
@@ -47,27 +109,40 @@
     <!-- App -->
     <div class="flex app" id="app" style="display: none;">
         <!-- Setting -->
-        <div class="flex settings">
+        <div class="flex column">
+            <!-- Outdoor Noises -->
             <div class="flex cat">
                 <h1>Outdoor Noises</h1>
 
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, waves)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, ocean)" type="checkbox">
                     <p>Waves</p>
                     <input 
-                    oninput="setVol(this.value, waves)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, ocean)" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, runningwater)" type="checkbox">
-                    <p>Running Water</p>
+                    <input class="check" oninput="toggleSound(this, river)" type="checkbox">
+                    <p>River</p>
                     <input 
-                    oninput="setVol(this.value, runningwater)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, river)" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, rain)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, wind)" type="checkbox">
+                    <p>Wind</p>
+                    <input 
+                    oninput="setVol(this.value, wind)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, rain1)" type="checkbox">
                     <p>Rain</p>
                     <input 
-                    oninput="setVol(this.value, rain)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, rain1)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, storm)" type="checkbox">
+                    <p>Storm</p>
+                    <input 
+                    oninput="setVol(this.value, storm)" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
                     <input class="check" oninput="toggleSound(this, night)" type="checkbox">
@@ -87,7 +162,150 @@
                     <input 
                     oninput="setVol(this.value, seagulls)" class="vol" type="range" min="0" max="10" value="5">
                 </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, highway)" type="checkbox">
+                    <p>Highway Ambience</p>
+                    <input 
+                    oninput="setVol(this.value, highway)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, fireplace)" type="checkbox">
+                    <p>Fire</p>
+                    <input 
+                    oninput="setVol(this.value, fireplace)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
 
+            </div>
+            <!-- Indoor Noises -->
+            <div class="flex cat">
+                <h1>Indoor Noises</h1>
+
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, pencil1)" type="checkbox">
+                    <p>Pencil</p>
+                    <input 
+                    oninput="setVol(this.value, pencil1)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, typing)" type="checkbox">
+                    <p>Typing</p>
+                    <input 
+                    oninput="setVol(this.value, typing)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, typewriter)" type="checkbox">
+                    <p>Typewriter</p>
+                    <input 
+                    oninput="setVol(this.value, typewriter)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, mouse)" type="checkbox">
+                    <p>Mouse Clicks</p>
+                    <input 
+                    oninput="setVol(this.value, mouse)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, clock)" type="checkbox">
+                    <p>Ticking Clock</p>
+                    <input 
+                    oninput="setVol(this.value, clock)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, page)" type="checkbox">
+                    <p>Turning Pages</p>
+                    <input 
+                    oninput="setVol(this.value, page)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, paper)" type="checkbox">
+                    <p>Handling Paper</p>
+                    <input 
+                    oninput="setVol(this.value, paper)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, library)" type="checkbox">
+                    <p>Library Ambience</p>
+                    <input 
+                    oninput="setVol(this.value, library)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, cafe1)" type="checkbox">
+                    <p>Cafe Ambience</p>
+                    <input 
+                    oninput="setVol(this.value, cafe1)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, breakfast)" type="checkbox">
+                    <p>Breakfast</p>
+                    <input 
+                    oninput="setVol(this.value, breakfast)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+            </div>
+        </div>
+        <div class="flex column">
+            <div class="flex cat">
+                <h1>Indoor Noises</h1>
+
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, pencil1)" type="checkbox">
+                    <p>Pencil</p>
+                    <input 
+                    oninput="setVol(this.value, pencil1)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, typing)" type="checkbox">
+                    <p>Typing</p>
+                    <input 
+                    oninput="setVol(this.value, typing)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, typewriter)" type="checkbox">
+                    <p>Typewriter</p>
+                    <input 
+                    oninput="setVol(this.value, typewriter)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, mouse)" type="checkbox">
+                    <p>Mouse Clicks</p>
+                    <input 
+                    oninput="setVol(this.value, mouse)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, clock)" type="checkbox">
+                    <p>Ticking Clock</p>
+                    <input 
+                    oninput="setVol(this.value, clock)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, page)" type="checkbox">
+                    <p>Turning Pages</p>
+                    <input 
+                    oninput="setVol(this.value, page)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, paper)" type="checkbox">
+                    <p>Handling Paper</p>
+                    <input 
+                    oninput="setVol(this.value, paper)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, library)" type="checkbox">
+                    <p>Library Ambience</p>
+                    <input 
+                    oninput="setVol(this.value, library)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, cafe1)" type="checkbox">
+                    <p>Cafe Ambience</p>
+                    <input 
+                    oninput="setVol(this.value, cafe1)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
+                <div class="flex opt">
+                    <input class="check" oninput="toggleSound(this, breakfast)" type="checkbox">
+                    <p>Breakfast</p>
+                    <input 
+                    oninput="setVol(this.value, breakfast)" class="vol" type="range" min="0" max="10" value="5">
+                </div>
             </div>
         </div>
     </div>
