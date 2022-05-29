@@ -77,6 +77,14 @@ body {
     height: 100%; */
 }
 
+@media screen and (max-height: 700px) {
+.app, .title{
+  zoom: 65%;
+}
+#myVideo{
+  zoom: 10%
+}
+}
 .opt {
   align-items: center;
   margin-bottom: 10px;
