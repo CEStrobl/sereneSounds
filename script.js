@@ -1,16 +1,15 @@
 let vid = document.getElementById("myVideo")
-let vid2 = document.getElementById("myVideo3")
+let vid2 = document.getElementById("myVideo2")
 let title = document.getElementById("title")
 let app = document.getElementById("app")
 
 let random = ""
 
-let bgsTitle = ["snowfall", "ocean", "clouds", "autumntrees", "beach4", "beach2", "castle",
+let bgsTitle = ["snowfall", "clouds", "autumntrees", "beach4", "beach2", "castle",
 "forest1", "forest3", "rain1", "rain3", "shop1", "trees3", "window1",
 ]
 
 let snowfall = 0
-let oceanBG = 0
 let autumntrees = 0
 let beach4 = 0
 let castle = 0
@@ -199,19 +198,15 @@ function beginPlaylist() {
 
 function hideVid2(target) {
   vid2.style.opacity = 0;
-  console.log("0 opacity")
   setTimeout(() => {
       vid2.src = "img/live/" + target + ".mp4"
-      console.log("switched hidden vid")
     }, 600);
     setTimeout(() => {
-      console.log("bring back opacity")
       vid2.style.opacity = 1;
     }, 1000);
     setTimeout(() => {
       vid.src = "img/live/" + target + ".mp4"
       vid.currentTime=1.8
-      console.log("set underneath")
     }, 1800);
 }
 
