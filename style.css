@@ -42,6 +42,12 @@ body {
   margin-right: 20px;
 }
 
+.radio {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
 #myVideo {
   position: fixed;
   right: 0;
@@ -73,8 +79,9 @@ body {
   position: fixed;
   background-color: rgba(31, 30, 32, 0.392);
   padding: 15px;
-  /* width: 100%;
-    height: 100%; */
+   /* width: 100%; */
+   height: 100%;
+   align-items: center;
 }
 
 @media screen and (max-height: 700px) {
@@ -85,9 +92,17 @@ body {
   zoom: 10%
 }
 }
-.opt {
+.opt, .opt2 {
   align-items: center;
   margin-bottom: 10px;
+}
+
+.opt2{
+  margin-top: 15px;
+}
+
+.music .opt {
+  margin-left: 10px;
 }
 
 .vol {
@@ -139,6 +154,16 @@ body {
 
 h1 {
   margin-bottom: 25px;
+}
+
+.music h2{
+  width: 280px;
+  font-size: 20px;  
+}
+
+.music p {
+  width: 250px;
+  font-size: 18px;
 }
 
 p {

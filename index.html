@@ -100,6 +100,50 @@
             <source src="aud/sound/typing.mp3" type="audio/mpeg">
           </audio>
     </div>
+    <div>
+      <audio id="childhood">
+        <source src="aud/music/piano/'Childhood' by Scott Buckley.mp4" type="audio/mpeg">
+      </audio>
+      <audio id="enchanted">
+        <source src="aud/music/piano/Enchanted by Keys Of Moon 🇺🇸.mp4" type="audio/mpeg">
+      </audio>
+      <audio id="eternallove">
+        <source src="aud/music/piano/'Eternal Love' by Twisterium.mp4" type="audio/mpeg">
+      </audio>
+      <audio id="purpose">
+        <source src="aud/music/piano/Purpose by Jonny Easton 🇬🇧.mp4" type="audio/mpeg">
+      </audio>
+      <audio id="undertow">
+        <source src="aud/music/piano/Undertow by @Scott Buckley  🇦🇺.mp4" type="audio/mpeg">
+      </audio>
+      <audio id="warmmemories">
+        <source src="aud/music/piano/Warm Memories by Keys Of Moon 🇺🇸.mp4" type="audio/mpeg">
+      </audio>
+      <audio id="betonit">
+        <source src="aud/music/jazz/Bet On It – Silent Partner.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="bread">
+        <source src="aud/music/jazz/bread by lukrembo.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="soulandmind">
+        <source src="aud/music/jazz/Soul and Mind.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="nightfalling">
+        <source src="aud/music/jazz/The Night Falling – JR Tundra.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="ethereal">
+        <source src="aud/music/ambient/Ethereal by Punch Deck.mp4" type="audio/mpeg">
+      </audio>
+      <audio id="filaments">
+        <source src="aud/music/ambient/'Filaments' by @Scott Buckley  .mp4" type="audio/mpeg">
+      </audio>
+      <audio id="fragments">
+        <source src="aud/music/ambient/Fragments by @AERØHEAD 🇺🇸.mp4" type="audio/mpeg">
+      </audio>
+      <audio id="jul">
+        <source src="aud/music/ambient/Jul by Scott Buckley 🇦🇺.mp4" type="audio/mpeg">
+      </audio>
+    </div>
 
     <!-- Title Screen -->
     <div class="flex title" id="title">
@@ -243,69 +287,109 @@
             </div>
         </div>
         <div class="flex column">
-            <div class="flex cat">
-                <h1>Indoor Noises</h1>
+            <div class="flex cat music">
+                <h1>Music</h1>
 
+                <!-- Piano -->
+                <div class="flex opt2">
+                  <input class="radio" oninput="" type="radio"  name="music">
+                  <h2>Piano Playlist</h2>
+                  <input 
+                  oninput="" class="vol" type="range" min="0" max="10" value="5">
+              </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, pencil1)" type="checkbox">
-                    <p>Pencil</p>
+                    <input class="radio" oninput="toggleMusic(this, childhood)" type="radio"  name="music">
+                    <p>Childhood - Scott Buckley</p>
                     <input 
-                    oninput="setVol(this.value, pencil1)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, childhood)" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, typing)" type="checkbox">
-                    <p>Typing</p>
-                    <input 
-                    oninput="setVol(this.value, typing)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
-                <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, typewriter)" type="checkbox">
-                    <p>Typewriter</p>
-                    <input 
-                    oninput="setVol(this.value, typewriter)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
-                <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, mouse)" type="checkbox">
-                    <p>Mouse Clicks</p>
-                    <input 
-                    oninput="setVol(this.value, mouse)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
-                <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, clock)" type="checkbox">
-                    <p>Ticking Clock</p>
-                    <input 
-                    oninput="setVol(this.value, clock)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
-                <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, page)" type="checkbox">
-                    <p>Turning Pages</p>
-                    <input 
-                    oninput="setVol(this.value, page)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
-                <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, paper)" type="checkbox">
-                    <p>Handling Paper</p>
-                    <input 
-                    oninput="setVol(this.value, paper)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
-                <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, library)" type="checkbox">
-                    <p>Library Ambience</p>
-                    <input 
-                    oninput="setVol(this.value, library)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
-                <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, cafe1)" type="checkbox">
-                    <p>Cafe Ambience</p>
-                    <input 
-                    oninput="setVol(this.value, cafe1)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
-                <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, breakfast)" type="checkbox">
-                    <p>Breakfast</p>
-                    <input 
-                    oninput="setVol(this.value, breakfast)" class="vol" type="range" min="0" max="10" value="5">
-                </div>
+                  <input class="radio" oninput="toggleMusic(this, childhood)" type="radio"  name="music">
+                  <p>Enchanted - Keys of Moon</p>
+                  <input 
+                  oninput="setVol(this.value, childhood)" class="vol" type="range" min="0" max="10" value="5">
+              </div>
+
+              <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, eternallove)" type="radio"  name="music">
+                <p>Eternal Love - Twisterium</p>
+                <input 
+                oninput="setVol(this.value, eternallove)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+
+              <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, warmmemories)" type="radio"  name="music">
+                <p>Warm Memories - Keys of Moon</p>
+                <input 
+                oninput="setVol(this.value, warmmemories)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+
+
+            <!-- JAzz -->
+            <div class="flex opt2">
+              <input class="radio" oninput="" type="radio"  name="music">
+              <h2>Jazz Playlist</h2>
+              <input 
+              oninput="" class="vol" type="range" min="0" max="10" value="5">
+          </div>
+            <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, betonit)" type="radio"  name="music">
+                <p>Bet On It - Silent Partner</p>
+                <input 
+                oninput="setVol(this.value, betonit)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+            <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, bread)" type="radio"  name="music">
+                <p>Bread - lukrembo</p>
+                <input 
+                oninput="setVol(this.value, bread)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+            <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, soulandmind)" type="radio"  name="music">
+                <p>Soul and Mind</p>
+                <input 
+                oninput="setVol(this.value, soulandmind)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+            <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, nightfalling)" type="radio"  name="music">
+                <p>The Night Falling - JR Tundra</p>
+                <input 
+                oninput="setVol(this.value, nightfalling)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+
+            <!-- Ambience -->
+
+            <div class="flex opt2">
+              <input class="radio" oninput="" type="radio"  name="music">
+              <h2>Ambience Playlist</h2>
+              <input 
+              oninput="" class="vol" type="range" min="0" max="10" value="5">
+          </div>
+            <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, ethereal)" type="radio"  name="music">
+                <p>Ethereal - Punch Deck</p>
+                <input 
+                oninput="setVol(this.value, ethereal)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+            <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, filaments)" type="radio"  name="music">
+                <p>Filaments - Scott Buckley</p>
+                <input 
+                oninput="setVol(this.value, filaments)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+            <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, fragments)" type="radio"  name="music">
+                <p>Fragments - Scott Buckley</p>
+                <input 
+                oninput="setVol(this.value, fragments)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+            <div class="flex opt">
+                <input class="radio" oninput="toggleMusic(this, jul)" type="radio"  name="music">
+                <p>Jul - Scott Buckley</p>
+                <input 
+                oninput="setVol(this.value, jul)" class="vol" type="range" min="0" max="10" value="5">
+            </div>
+
             </div>
         </div>
     </div>
