@@ -48,7 +48,7 @@ body {
   margin-right: 20px;
 }
 
-#myVideo {
+#myVideo, #myVideo3 {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -158,7 +158,8 @@ h1 {
 
 .music h2{
   width: 280px;
-  font-size: 20px;  
+  font-size: 22px;  
+  text-decoration: underline;
 }
 
 .music p {
