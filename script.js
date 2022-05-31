@@ -3,6 +3,25 @@ let vid2 = document.getElementById("myVideo2")
 let title = document.getElementById("title")
 let app = document.getElementById("app")
 
+
+function getCoords(element) {
+  console.log(
+    "  -- ", element, "--", "\n",
+    "| x: ",document.getElementById(element).getBoundingClientRect().x, 
+    "\n",
+    "| y: ",document.getElementById(element).getBoundingClientRect().y,
+    "\n",
+    " -------",
+    "\n"
+  )
+}
+
+// getCoords("s1")
+// getCoords("s2")
+// getCoords("erene")
+// getCoords("ounds")
+// getCoords("note")
+
 let random = ""
 
 let bgsTitle = ["snowfall", "clouds", "autumntrees", "beach4", "beach2", "castle",
@@ -72,10 +91,10 @@ function showElement(x) {
     x.style.opacity = 0;
     setTimeout(() => { 
       x.style.display = "flex";
-    }, 600);
+    }, 800);
     setTimeout(() => {
       x.style.opacity = 1;
-    }, 700);
+    }, 1000);
 }
 
 
@@ -200,14 +219,14 @@ function hideVid2(target) {
   vid2.style.opacity = 0;
   setTimeout(() => {
       vid2.src = "img/live/" + target + ".mp4"
-    }, 600);
+    }, 800);
     setTimeout(() => {
       vid2.style.opacity = 1;
-    }, 1000);
+    }, 1200);
     setTimeout(() => {
       vid.src = "img/live/" + target + ".mp4"
       vid.currentTime=1.8
-    }, 1800);
+    }, 2000);
 }
 
 
