@@ -11,6 +11,7 @@ body {
   font-family: 'Noto Serif Display', serif;
   color: white;
   margin: 0;
+  background-color: #000000;
 }
 
 .button {
@@ -83,14 +84,16 @@ body {
 }
 
 #container{
-  animation: float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out 5s infinite;
   left: -70px;
+  top: 20px;
   position: relative;
 }
 
 .logoText{
   position:absolute;
   color: rgb(255, 255, 255);
+  /* color: none; */
   font-size: 100px;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -106,17 +109,51 @@ body {
 @keyframes neon {
   from {
     text-shadow: 0 0 6px rgba(255, 255, 255, 0.92);
- }
+  }
   to {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
- }
+  }
 }
 
 
 
+@keyframes sIntro {
+  0%{
+    color: transparent;
+  }
+  30%{
+    color: transparent;
+  }
+  35%{
+    color: white;
+  }
+  100%{
+    color: white;
+  }
+}
+
+
+@keyframes extraIntro {
+  0%{
+    color: transparent;
+  }
+  75%{
+    color: transparent;
+  }
+  80%{
+    color: white;
+  }
+  100%{
+    color: white;
+  }
+}
+.extraText{
+  animation: extraIntro 5s ease-in-out 0s 1 normal none;
+}
 
 .s{
   font-size: 380px;
+  animation: sIntro 5s ease-in-out 0s 1 normal none;
 }
 
 #s1{
@@ -159,6 +196,146 @@ body {
   }
 }
 
+#box{
+  position: absolute;
+  border-style: none;
+  animation: introBox 2s ease-in-out 0s 1 normal none;
+}
+
+
+@keyframes introBox {
+  /* None */
+  0%{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    height: 10px;
+    width: 10px;
+    transform: rotate(0deg);
+  }
+  8%{
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  /* Dot */
+  20%{
+    background-color: white;
+  }
+  25%{
+    width: 10px;
+  }
+
+  /* Line */
+  50% {
+    width: 700px;
+    border-width: 0px 0px;
+    border-style: none;
+  }
+  55% {
+    border-width: 0px 0px;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  /* Box */
+  75% {
+    
+    border-width: 250px 0px;
+    border-color: white;
+  }
+  87% {
+    height: 10px;
+    background-color: white;
+    border-width: 250px 0px;
+  }
+
+  89%{
+    background-color: transparent;
+  }
+  
+  /* Top/Bottom Borders */
+  100%{
+    border-style: solid;
+    width: 700px;
+    background-color: transparent;
+    height: 500px;
+    border-width: 10px 0px;
+  }
+}
+
+#line{
+  position: absolute;
+  border-style: none;
+  animation: introLine 2s ease-in-out 2.5s 1 normal none;
+  transform: skew(-30deg);
+}
+
+@keyframes introLine {
+  /* None */
+  0%{
+    background-color: rgba(255, 255, 255, 0);
+    height: 10px;
+    width: 10px;
+    left: 49.5%;
+  }
+  8%{
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  /* Dot */
+  20%{
+    background-color: white;
+  }
+  25%{
+    height: 10px;
+  }
+
+  /* Line */
+  50% {
+    height: 500px;
+  }
+  55% {
+    width: 10px;
+  }
+
+  /* Box */
+  75% {
+    width: 500px;
+  }
+  87% {
+    width: 500px;
+    background-color: white;
+  }
+
+  89%{
+    left: 49.5%;
+    width: 500px;
+  }
+  
+  /* Move right */
+  100%{
+    left: 90%;
+    width: 10px;
+    background-color: white;
+    height: 500px;
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity:0;
+    display: none;
+  }
+  89%{
+    opacity:0;
+    display: none;
+  }
+  100%{
+    opacity:1;
+    display: flex;
+  }
+}
+
+
 
 
 .btn {
@@ -173,6 +350,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   width: 500px; 
+  animation: fadeIn 5s ease-in-out 0s 1 normal none;
 }
 
 .btn:hover { text-decoration: none; }
@@ -240,6 +418,35 @@ width: 70%;
   zoom: 10%
 }
 }
+
+
+@media screen and (max-width: 1000px) {
+  *{zoom: 90%;}
+  .app{
+    flex-direction: column;
+    width: 100%;
+    zoom:200%;
+    overflow-y: scroll;
+    padding: 0%;
+    overflow-x: hidden;
+  }
+  .music p{
+    width: 170px !important
+  }
+  .music h2 {
+    width: 200px !important
+  }
+  .opt2{
+    justify-content: center
+  }
+  .cat {
+    align-items: center;
+  }
+  #myVideo, #myVideo2 {
+    right: -1700px;
+  }
+}
+
 .opt, .opt2 {
   align-items: center;
   margin-bottom: 10px;
