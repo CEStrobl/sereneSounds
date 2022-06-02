@@ -14,6 +14,14 @@ body {
   background-color: #000000;
 }
 
+
+
+#version{
+  position: absolute;
+  
+}
+
+
 .button {
   background-color: #4caf50; /* Green */
   border: none;

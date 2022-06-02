@@ -4,6 +4,8 @@ let title = document.getElementById("title")
 let app = document.getElementById("app")
 
 
+let skipIntro = false
+
 function getCoords(element) {
   console.log(
     "  -- ", element, "--", "\n",
@@ -53,8 +55,6 @@ let piano = [childhood, enchanted, eternallove, purpose, undertow, warmmemories]
 let ambience = [ethereal, filaments, fragments, jul]
 
 
-
-
 let MusicLibrary = []
 
 for (let i = 0; i < jazz.length; i++) {
@@ -97,6 +97,14 @@ function showElement(x) {
     }, 1000);
 }
 
+
+function introSkip() {
+  if(skipIntro === true) {
+    app.style.display = "flex"
+    title.style.display = "none"
+  }
+}
+introSkip()
 
 function toggleSound (checkID, sound) {
   if(checkID.checked === true) {
@@ -165,38 +173,32 @@ function setVol(amount, target) {
 }
 
 
-function setAll() {
-  for (let i = 0; i < AudioLibrary.length; i++) {
-    const sound = AudioLibrary[i];
-    sound.volume = 0.5
-    sound.loop = true
-  }
-  for (let i = 0; i < MusicLibrary.length; i++) {
-    const sound = MusicLibrary[i];
-    sound.volume = 0.5
-    sound.loop = true
+function setAll(mode) {
+  if (mode === "init") {
+    for (let i = 0; i < AudioLibrary.length; i++) {
+      const sound = AudioLibrary[i];
+      sound.volume = 0.5
+      sound.loop = true
+    }
+    for (let i = 0; i < MusicLibrary.length; i++) {
+      const sound = MusicLibrary[i];
+      sound.volume = 0.5
+      sound.loop = true
+    }
+  } else if (mode === "pauseMusic") {
+    for (let i = 0; i < MusicLibrary.length; i++) {
+      const sound = MusicLibrary[i];
+      sound.pause()
+    }
+  } else if (mode === "pauseAudio") {
+    for (let i = 0; i < AudioLibrary.length; i++) {
+      const sound = AudioLibrary[i];
+      sound.pause()
+    }
   }
 }
-setAll()
+setAll("init")
 
-
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
 
 
 
@@ -210,16 +212,13 @@ function toggleMusic (checkID, sound) {
   }
 }
 
-function beginPlaylist() {
-
-}
 
 
 function hideVid2(target) {
   vid2.style.opacity = 0;
   setTimeout(() => {
-      vid2.src = "img/live/" + target + ".mp4"
-    }, 800);
+    vid2.src = "img/live/" + target + ".mp4"
+  }, 800);
     setTimeout(() => {
       vid2.style.opacity = 1;
     }, 1200);
@@ -232,9 +231,9 @@ function hideVid2(target) {
 
 function autoBackground() {
   var num = [autumntrees, beach4, castle,
-  rain1BG, rain3, shop1, snowfall, trees3, window1,];
+    rain1BG, rain3, shop1, snowfall, trees3, window1,];
   let max = Math.max.apply(null, num)
-
+  
   let x =max
 
   if (x === autumntrees) {
@@ -270,3 +269,42 @@ function autoBackground() {
     //   }
     // }
 }
+
+
+
+  
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+}
+
+shuffle(piano)
+shuffle(ambience)
+shuffle(jazz)
+
+let p = 0
+
+function playlist(array) {
+  setAll("pauseMusic")
+  if (p === array.length - 1) {
+    p = 0;
+  } else {
+    p++;
+  }
+  array[p].play()
+  array[p].onended = function(){playlist(array)}
+}
+  

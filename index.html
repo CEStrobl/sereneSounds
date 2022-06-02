@@ -141,6 +141,8 @@
       </audio>
     </div>
 
+    <p id="version">v1.1.0</p>
+
     <!-- Title Screen -->
     <div class="flex title" id="title">
         <!-- <img id="logo" src="img/serenesounds.png" style="height: 50%; margin-right: 5%;"> -->
@@ -300,7 +302,7 @@
 
                 <!-- Piano -->
                 <div class="flex opt2">
-                  <input class="radio" oninput="" type="radio"  name="music">
+                  <input class="radio" oninput="playlist(piano)" type="radio"  name="music">
                   <h2>Piano Playlist</h2>
                   <input 
                   oninput="" class="vol" type="range" min="0" max="10" value="5">
@@ -312,10 +314,10 @@
                     oninput="setVol(this.value, childhood)" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                  <input class="radio" oninput="toggleMusic(this, childhood)" type="radio"  name="music">
+                  <input class="radio" oninput="toggleMusic(this, enchanted)" type="radio"  name="music">
                   <p>Enchanted - Keys of Moon</p>
                   <input 
-                  oninput="setVol(this.value, childhood)" class="vol" type="range" min="0" max="10" value="5">
+                  oninput="setVol(this.value, enchanted)" class="vol" type="range" min="0" max="10" value="5">
               </div>
 
               <div class="flex opt">
@@ -335,7 +337,7 @@
 
             <!-- JAzz -->
             <div class="flex opt2">
-              <input class="radio" oninput="" type="radio"  name="music">
+              <input class="radio" oninput="playlist(jazz)" type="radio"  name="music">
               <h2>Jazz Playlist</h2>
               <input 
               oninput="" class="vol" type="range" min="0" max="10" value="5">
@@ -368,7 +370,7 @@
             <!-- Ambience -->
 
             <div class="flex opt2">
-              <input class="radio" oninput="" type="radio"  name="music">
+              <input class="radio" oninput="playlist(ambience)" type="radio"  name="music">
               <h2>Ambience Playlist</h2>
               <input 
               oninput="" class="vol" type="range" min="0" max="10" value="5">
