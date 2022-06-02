@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: 'Noto Serif Display', serif;
+  font-family: 'Noto Serif Display', serif,;
   color: white;
   margin: 0;
   background-color: #000000;
@@ -19,7 +19,24 @@ body {
 
 #version{
   position: absolute;
+  color: rgba(255, 255, 255, 0.124);
+}
 
+
+
+
+#imgLogo{
+  zoom: 50%;
+}
+
+#ss{
+  position: absolute;
+  animation: sIntro 5s ease-in-out 0s 1 normal none;
+}
+
+#letters{
+  position: absolute;
+  animation: extraIntro 5s ease-in-out 0s 1 normal none;
 }
 
 
@@ -94,9 +111,10 @@ body {
 
 #container{
   animation: float 6s ease-in-out 5s infinite;
-  left: -70px;
-  top: 20px;
+  left: -48%;
+  top: -11%;
   position: relative;
+  display: flex;
 }
 
 .logoText{
@@ -455,6 +473,56 @@ width: 70%;
   #myVideo, #myVideo2 {
     right: -1700px;
   }
+  @keyframes introLine {
+    /* None */
+    0%{
+      background-color: rgba(255, 255, 255, 0);
+      height: 10px;
+      width: 10px;
+      left: 47%;
+    }
+    8%{
+      background-color: rgba(255, 255, 255, 0);
+    }
+  
+    /* Dot */
+    20%{
+      background-color: white;
+    }
+    25%{
+      height: 10px;
+    }
+  
+    /* Line */
+    50% {
+      height: 500px;
+    }
+    55% {
+      width: 10px;
+    }
+  
+    /* Box */
+    75% {
+      width: 500px;
+    }
+    87% {
+      width: 500px;
+      background-color: white;
+    }
+  
+    89%{
+      left: 47%;
+      width: 500px;
+    }
+    
+    /* Move right */
+    100%{
+      left: 90%;
+      width: 10px;
+      background-color: white;
+      height: 500px;
+    }
+  }
 }
 
 .opt, .opt2 {
@@ -504,8 +572,10 @@ width: 70%;
 }
 
 .check {
-    height: 125%;
-    width: 125%;
+    /* height: 125%;
+    width: 125%; */
+    height: 25px;
+    width: 25px;
 }
 .column {
   flex-direction: column;
