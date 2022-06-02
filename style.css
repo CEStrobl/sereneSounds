@@ -111,8 +111,8 @@ body {
 
 #container{
   animation: float 6s ease-in-out 5s infinite;
-  left: -48%;
-  top: -11%;
+  left: -22%;
+  top: -18%;
   position: relative;
   display: flex;
 }
@@ -147,15 +147,19 @@ body {
 @keyframes sIntro {
   0%{
     color: transparent;
+    opacity: 0;
   }
   30%{
     color: transparent;
+    opacity: 0;
   }
   35%{
     color: white;
+    opacity: 1;
   }
   100%{
     color: white;
+    opacity: 1;
   }
 }
 
@@ -163,14 +167,18 @@ body {
 @keyframes extraIntro {
   0%{
     color: transparent;
+    opacity: 0;
   }
   75%{
+    opacity: 0;
     color: transparent;
   }
   80%{
+    opacity: 1;
     color: white;
   }
   100%{
+    opacity: 1;
     color: white;
   }
 }
@@ -472,6 +480,10 @@ width: 70%;
   }
   #myVideo, #myVideo2 {
     right: -1700px;
+  }
+  #container{
+    left: -48%;
+    top: -11%;
   }
   @keyframes introLine {
     /* None */
