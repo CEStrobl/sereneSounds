@@ -6,16 +6,19 @@
 
 html,
 body {
-  font-family: 'Noto Serif Display', serif,;
+  /* font-family: 'Noto Serif Display', serif; */
   color: white;
   margin: 0;
   background-color: #000000;
-  text-rendering: optimizeLegibility
+  text-rendering: optimizeLegibility;
+  height:100%;
+  z-index: 0;
 }
 
 #version{
   position: absolute;
   color: rgba(255, 255, 255, 0.124);
+  z-index: 50;
 }
 
 #myVideo, #myVideo2 {
@@ -67,7 +70,33 @@ body {
 
 
 
+/* Debugging */
 
+#infoBox{
+  /* width: 80%;
+  height: 80%; */
+  background-color: #161616f1;
+  position: absolute;
+  color: white;
+  z-index: 3;
+  padding: 40px;
+  font-family:'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+}
+#infoBox p{
+  font-family:'Courier New', Courier, monospace;
+  /* font-size: 30px; */
+  padding: 10px;
+  width: unset;
+  margin: unset;
+}
+
+#infoBox h3{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
 
 
 /* Logo */
@@ -464,6 +493,7 @@ width: 70%;
 }
 
 .vol {
+  display: none;
   -webkit-appearance: none;
   width: 100px;
   height: 10px;
@@ -764,6 +794,7 @@ p {
 }
   
 @media screen and (max-width: 800px) {
+  #infoBox{zoom: 130% !important; font-size: 30px;}
     *{zoom: 90%;}
     .app{
       flex-direction: column;

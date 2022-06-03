@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
     <title>Serene Sounds</title>
 </head>
@@ -142,13 +141,27 @@
       </audio>
     </div>
 
-    <p id="version">v0.1.4</p>
+    <p onclick="hello('infoContainer')" id="version">v0.1.5</p>
+
+    <div  id="infoContainer" style="display: none; justify-content: center; align-items: center; position: absolute;width: 100%; height: 100%;">
+      <div id="infoBox">
+        <h1>Debugging Info</h1>
+        <p>Screen Width: <span id="screenW"></span></p>
+        <p>Screen Height: <span id="screenH"></span></p>
+        <p>Browser: <span id="os"></span></p>
+        <p>Language: <span id="lang"></span></p>
+        <p>Online: <span id="online"></span></p>
+        <br>
+        <h3 onclick="goodBye('infoContainer')">Click to Close</h3>
+      </div>
+
+    </div>
+
 
     <!-- Title Screen -->
     <div class="flex title" id="title">
-        <!-- <img id="logo" src="img/serenesounds.png" style="height: 50%; margin-right: 5%;"> -->
         <div id="box"></div>
-    <div id="line"></div>
+        <div id="line"></div>
         <div id="container">
           <div id="imgLogo">
             <img id="ss"src="img/SS.png" alt="">
@@ -314,7 +327,7 @@
                   <input 
                   oninput="" class="vol" type="range" min="0" max="10" value="5">
               </div>
-                <div class="flex opt">
+                <div class="flex opt" id="childhood">
                     <input class="radio" oninput="toggleMusic(this, childhood)" type="radio"  name="music">
                     <p>Childhood - Scott Buckley</p>
                     <input 
