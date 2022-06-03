@@ -3,7 +3,7 @@ let vid2 = document.getElementById("myVideo2");
 let title = document.getElementById("title");
 let app = document.getElementById("app");
 
-let skipIntro = false;
+let skipIntro = true;
 
 // Debugging Info
 document.getElementById("screenW").innerHTML = screen.width + "px";
@@ -76,17 +76,10 @@ function getCoords(element) {
   );
 }
 
-const divElem = document.getElementById("childhood");
-const inputElements = document.querySelectorAll(".check");
-console.log(inputElements);
+const divElem = document.getElementById("musicTab");
+const volumes = divElem.querySelectorAll(".vol");
 
-// getCoords("s1")
-// getCoords("s2")
-// getCoords("erene")
-// getCoords("ounds")
-// getCoords("note")
-
-
+console.log(volumes)
 
 
 
@@ -222,17 +215,20 @@ function introSkip() {
 }
 introSkip();
 
-function toggleSound(checkID, sound) {
+function toggleSound(checkID, sound, id) {
   if (checkID.checked === true) {
     sound.play();
     calcPoints(sound, 1);
+    document.getElementById(id).style.display = "block"
   } else {
     sound.pause();
     calcPoints(sound, -1);
+    document.getElementById(id).style.display = "none"
   }
   if (enableAutoBG.checked === true) {
     autoBackground();
   }
+  
 }
 
 function calcPoints(sound, x) {
@@ -313,11 +309,19 @@ function setAll(mode) {
       const sound = AudioLibrary[i];
       sound.pause();
     }
+  } else if(mode === "vol") {
+    for (let i = 0; i < volumes.length; i++) {
+      const volX = volumes[i];
+      volX.style.display = 'none'
+    }
   }
 }
 setAll("init");
 
-function toggleMusic(checkID, sound) {
+
+
+
+function toggleMusic(checkID, sound, id) {
   for (let i = 0; i < MusicLibrary.length; i++) {
     const x = MusicLibrary[i];
     x.pause();
@@ -325,6 +329,9 @@ function toggleMusic(checkID, sound) {
   if (checkID.checked === true) {
     sound.play();
   }
+
+  setAll('vol')
+  document.getElementById(id).style.display = "block"
 }
 
 function hideVid2(target) {

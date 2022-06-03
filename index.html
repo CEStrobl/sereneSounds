@@ -141,7 +141,7 @@
       </audio>
     </div>
 
-    <p onclick="hello('infoContainer')" id="version">v0.1.5</p>
+    <p onclick="hello('infoContainer')" id="version">v0.2.0</p>
 
     <div  id="infoContainer" style="display: none; justify-content: center; align-items: center; position: absolute;width: 100%; height: 100%;">
       <div id="infoBox">
@@ -186,64 +186,64 @@
                 <h1>Outdoor Noises</h1>
 
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, ocean)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, ocean, 'ocvol')" type="checkbox">
                     <p>Waves</p>
                     <input 
-                    oninput="setVol(this.value, ocean)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, ocean)" id="ocvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, river)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, river, 'rivol')" type="checkbox">
                     <p>River</p>
                     <input 
-                    oninput="setVol(this.value, river)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, river)" id="rivol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, wind)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, wind, 'wivol')" type="checkbox">
                     <p>Wind</p>
                     <input 
-                    oninput="setVol(this.value, wind)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, wind)" id="wivol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, rain1)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, rain1, 'ra1vol')" type="checkbox">
                     <p>Rain</p>
                     <input 
-                    oninput="setVol(this.value, rain1)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, rain1)" id="ra1vol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, storm)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, storm, 'stovol')" type="checkbox">
                     <p>Storm</p>
                     <input 
-                    oninput="setVol(this.value, storm)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, storm)" id="stovol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, night)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, night, 'nightvol')" type="checkbox">
                     <p>Night Ambience</p>
                     <input 
-                    oninput="setVol(this.value, night)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, night)" id="nightvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, birdschirp)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, birdschirp, 'bivol')" type="checkbox">
                     <p>Birds Chirping</p>
                     <input 
-                    oninput="setVol(this.value, birdschirp)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, birdschirp)" id="bivol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, seagulls)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, seagulls, 'seagullvol')" type="checkbox">
                     <p>Seagulls</p>
                     <input 
-                    oninput="setVol(this.value, seagulls)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, seagulls)" id="seagullvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, highway)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, highway, 'hivol')" type="checkbox">
                     <p>Highway Ambience</p>
                     <input 
-                    oninput="setVol(this.value, highway)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, highway)" id="hivol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, fireplace)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, fireplace, 'firevol')" type="checkbox">
                     <p>Fireplace</p>
                     <input 
-                    oninput="setVol(this.value, fireplace)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, fireplace)" id="firevol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
 
             </div>
@@ -252,73 +252,79 @@
                 <h1>Indoor Noises</h1>
 
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, pencil1)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, pencil1, 'penvol')" type="checkbox">
                     <p>Pencil</p>
                     <input 
-                    oninput="setVol(this.value, pencil1)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, pencil1)" id="penvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, typing)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, typing,'tyvol')" type="checkbox">
                     <p>Typing</p>
                     <input 
-                    oninput="setVol(this.value, typing)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, typing)" id="tyvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, typewriter)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, typewriter, 'tywvol')" type="checkbox">
                     <p>Typewriter</p>
                     <input 
-                    oninput="setVol(this.value, typewriter)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, typewriter)" id="tywvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, mouse)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, mouse, 'mousevol')" type="checkbox">
                     <p>Mouse Clicks</p>
                     <input 
-                    oninput="setVol(this.value, mouse)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, mouse)" id="mousevol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, clock)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, clock, 'clockvol')" type="checkbox">
                     <p>Ticking Clock</p>
                     <input 
-                    oninput="setVol(this.value, clock)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, clock)" id="clockvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, page)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, page, 'pavol')" type="checkbox">
                     <p>Turning Pages</p>
                     <input 
-                    oninput="setVol(this.value, page)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, page)" id="pavol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, paper)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, paper, 'papervol')" type="checkbox">
                     <p>Handling Paper</p>
                     <input 
-                    oninput="setVol(this.value, paper)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, paper)" id="papervol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, library)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, library, 'libvol')" type="checkbox">
                     <p>Library Ambience</p>
                     <input 
-                    oninput="setVol(this.value, library)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, library)" id="libvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                    <input class="check" oninput="toggleSound(this, cafe1)" type="checkbox">
+                    <input class="check" oninput="toggleSound(this, cafe1, 'cafevol')" type="checkbox">
                     <p>Cafe Ambience</p>
                     <input 
-                    oninput="setVol(this.value, cafe1)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, cafe1)" id="cafevol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
 
                 <br>
 
                 <div class="flex opt">
-                  <input class="check" id="autobg" type="checkbox">
+                  <input oninput="" class="check" id="autobg" type="checkbox">
                   <p>Enable Auto Background</p>
-                  <input 
-                  oninput="setVol(this.value, cafe1)" class="vol" type="range" min="0" max="10" value="5">
               </div>
             </div>
         </div>
         <div class="flex column">
-            <div class="flex cat music">
-                <h1>Music</h1>
+          <!-- Music -->
+            <div id="musicTab" class="flex cat music">
+              <div style="display: flex;flex-direction: row; justify-content: space-between;">
+                <h1>Music</h1> 
+              </div>
+
+              <div class="flex opt2" id="childhooddiv">
+                <input class="radio" oninput="setAll('pauseMusic'); setAll('vol')" type="radio" checked="true"  name="music">
+                <h2 style="text-decoration:none;">No Music</h2>
+            </div>
 
                 <!-- Piano -->
                 <div class="flex opt2">
@@ -327,31 +333,31 @@
                   <input 
                   oninput="" class="vol" type="range" min="0" max="10" value="5">
               </div>
-                <div class="flex opt" id="childhood">
-                    <input class="radio" oninput="toggleMusic(this, childhood)" type="radio"  name="music">
+                <div class="flex opt" id="childhooddiv">
+                    <input class="radio" oninput="toggleMusic(this, childhood, 'chvol')" type="radio"  name="music">
                     <p>Childhood - Scott Buckley</p>
                     <input 
-                    oninput="setVol(this.value, childhood)" class="vol" type="range" min="0" max="10" value="5">
+                    oninput="setVol(this.value, childhood)" id="chvol" class="vol" type="range" min="0" max="10" value="5">
                 </div>
                 <div class="flex opt">
-                  <input class="radio" oninput="toggleMusic(this, enchanted)" type="radio"  name="music">
+                  <input class="radio" oninput="toggleMusic(this, enchanted, 'envol')" type="radio"  name="music">
                   <p>Enchanted - Keys of Moon</p>
                   <input 
-                  oninput="setVol(this.value, enchanted)" class="vol" type="range" min="0" max="10" value="5">
+                  oninput="setVol(this.value, enchanted)" id="envol" class="vol" type="range" min="0" max="10" value="5">
               </div>
 
               <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, eternallove)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, eternallove, 'etvol')" type="radio"  name="music">
                 <p>Eternal Love - Twisterium</p>
                 <input 
-                oninput="setVol(this.value, eternallove)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, eternallove)" id="etvol" class="vol" type="range" min="0" max="10" value="5">
             </div>
 
               <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, warmmemories)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, warmmemories, 'warmvol')" type="radio"  name="music">
                 <p>Warm Memories - Keys of Moon</p>
                 <input 
-                oninput="setVol(this.value, warmmemories)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, warmmemories)" id="warmvol" class="vol" type="range" min="0" max="10" value="5">
             </div>
 
 
@@ -363,28 +369,28 @@
               oninput="" class="vol" type="range" min="0" max="10" value="5">
           </div>
             <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, betonit)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, betonit, 'bevol')" type="radio"  name="music">
                 <p>Bet On It - Silent Partner</p>
                 <input 
-                oninput="setVol(this.value, betonit)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, betonit)" id="bevol" class="vol" type="range" min="0" max="10" value="5">
             </div>
             <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, bread)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, bread, 'brvol')" type="radio"  name="music">
                 <p>Bread - lukrembo</p>
                 <input 
-                oninput="setVol(this.value, bread)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, bread)" id="brvol" class="vol" type="range" min="0" max="10" value="5">
             </div>
             <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, soulandmind)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, soulandmind, 'sovol')" type="radio"  name="music">
                 <p>Soul and Mind</p>
                 <input 
-                oninput="setVol(this.value, soulandmind)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, soulandmind)" id="sovol" class="vol" type="range" min="0" max="10" value="5">
             </div>
             <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, nightfalling)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, nightfalling, 'nivol')" type="radio"  name="music">
                 <p>The Night Falling - JR Tundra</p>
                 <input 
-                oninput="setVol(this.value, nightfalling)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, nightfalling)" id="nivol" class="vol" type="range" min="0" max="10" value="5">
             </div>
 
             <!-- Ambience -->
@@ -396,28 +402,28 @@
               oninput="" class="vol" type="range" min="0" max="10" value="5">
           </div>
             <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, ethereal)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, ethereal, 'ethervol')" type="radio"  name="music">
                 <p>Ethereal - Punch Deck</p>
                 <input 
-                oninput="setVol(this.value, ethereal)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, ethereal)" id="ethervol" class="vol" type="range" min="0" max="10" value="5">
             </div>
             <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, filaments)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, filaments, 'filvol')" type="radio"  name="music">
                 <p>Filaments - Scott Buckley</p>
                 <input 
-                oninput="setVol(this.value, filaments)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, filaments)" id="filvol" class="vol" type="range" min="0" max="10" value="5">
             </div>
             <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, fragments)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, fragments, 'fragvol')" type="radio"  name="music">
                 <p>Fragments - Scott Buckley</p>
                 <input 
-                oninput="setVol(this.value, fragments)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, fragments)" id="fragvol" class="vol" type="range" min="0" max="10" value="5">
             </div>
             <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, jul)" type="radio"  name="music">
+                <input class="radio" oninput="toggleMusic(this, jul, 'julvol')" type="radio"  name="music">
                 <p>Jul - Scott Buckley</p>
                 <input 
-                oninput="setVol(this.value, jul)" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, jul)" id="julvol" class="vol" type="range" min="0" max="10" value="5">
             </div>
 
             </div>
