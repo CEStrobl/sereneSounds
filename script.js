@@ -3,7 +3,7 @@ let vid2 = document.getElementById("myVideo2");
 let title = document.getElementById("title");
 let app = document.getElementById("app");
 
-let skipIntro = true;
+let skipIntro = false;
 
 // Debugging Info
 document.getElementById("screenW").innerHTML = screen.width + "px";
