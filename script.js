@@ -428,3 +428,49 @@ function playlist(array) {
     playlist(array);
   };
 }
+
+
+
+
+function expand(songs, icon){
+  let s = document.getElementById(songs)
+  let i = document.getElementById(icon)
+
+  if (s.style.display === 'none') {
+    s.style.opacity = 0;
+    s.style.height = '0px'
+    const options = s.querySelectorAll(".opt");
+    setTimeout(() => {
+      s.style.display = "block";
+    }, 20);
+    setTimeout(() => {
+      s.style.height = options.length * 30 + 'px'
+    }, 400);
+    setTimeout(() => {
+      s.style.opacity = 1;
+    }, 600);
+    
+  } else if (s.style.display === 'block') {
+    s.style.opacity = 1;
+    const options = s.querySelectorAll(".opt");
+    s.style.height = options.length * 30 + 'px'
+    s.style.display = "block";
+    setTimeout(() => {
+      s.style.opacity = 0;
+    }, 20);
+    setTimeout(() => {
+      s.style.height = '0px'
+    }, 800);
+    setTimeout(() => {
+      s.style.display = "none";
+    }, 1800);
+  }
+
+  if (i.innerHTML === 'expand_more') {
+    i.innerHTML = 'expand_less'
+    
+  } else if (i.innerHTML === 'expand_less') {
+    i.innerHTML = 'expand_more'
+  }
+
+}

@@ -70,7 +70,12 @@ body {
   margin-right: 20px;
 }
 
-
+.dropdown{
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
 
 
 /* Debugging */

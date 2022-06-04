@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
     <title>Serene Sounds</title>
 </head>
@@ -141,7 +142,7 @@
       </audio>
     </div>
 
-    <p onclick="hello('infoContainer')" id="version">v0.2.0</p>
+    <p onclick="hello('infoContainer')" id="version">v0.3.0</p>
 
     <div  id="infoContainer" style="display: none; justify-content: center; align-items: center; position: absolute;width: 100%; height: 100%;">
       <div id="infoBox">
@@ -309,19 +310,19 @@
                 <br>
 
                 <div class="flex opt">
-                  <input oninput="" class="check" id="autobg" type="checkbox">
+                  <input oninput="autoBackground();" class="check" id="autobg" type="checkbox">
                   <p>Enable Auto Background</p>
               </div>
             </div>
         </div>
+        <!-- Music -->
         <div class="flex column">
-          <!-- Music -->
             <div id="musicTab" class="flex cat music">
               <div style="display: flex;flex-direction: row; justify-content: space-between;">
                 <h1>Music</h1> 
               </div>
 
-              <div class="flex opt2" id="childhooddiv">
+              <div class="flex opt2">
                 <input class="radio" oninput="setAll('pauseMusic'); setAll('vol')" type="radio" checked="true"  name="music">
                 <h2 style="text-decoration:none;">No Music</h2>
             </div>
@@ -330,44 +331,51 @@
                 <div class="flex opt2">
                   <input class="radio" oninput="playlist(piano)" type="radio"  name="music">
                   <h2>Piano Playlist</h2>
-                  <input 
-                  oninput="" class="vol" type="range" min="0" max="10" value="5">
+                  <button class="dropdown" onclick="expand('pianoSongs', 'pianoListDrop')">
+                    <i id="pianoListDrop" class="material-icons">expand_more</i>
+                  </button>
               </div>
-                <div class="flex opt" id="childhooddiv">
-                    <input class="radio" oninput="toggleMusic(this, childhood, 'chvol')" type="radio"  name="music">
-                    <p>Childhood - Scott Buckley</p>
-                    <input 
-                    oninput="setVol(this.value, childhood)" id="chvol" class="vol" type="range" min="0" max="10" value="5">
-                </div>
+
+              <div id="pianoSongs" style="display: none;">
                 <div class="flex opt">
-                  <input class="radio" oninput="toggleMusic(this, enchanted, 'envol')" type="radio"  name="music">
-                  <p>Enchanted - Keys of Moon</p>
+                  <input class="radio" oninput="toggleMusic(this, childhood, 'chvol')" type="radio"  name="music">
+                  <p>Childhood - Scott Buckley</p>
                   <input 
-                  oninput="setVol(this.value, enchanted)" id="envol" class="vol" type="range" min="0" max="10" value="5">
+                  oninput="setVol(this.value, childhood)" id="chvol" class="vol" type="range" min="0" max="10" value="5">
               </div>
-
               <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, eternallove, 'etvol')" type="radio"  name="music">
-                <p>Eternal Love - Twisterium</p>
+                <input class="radio" oninput="toggleMusic(this, enchanted, 'envol')" type="radio"  name="music">
+                <p>Enchanted - Keys of Moon</p>
                 <input 
-                oninput="setVol(this.value, eternallove)" id="etvol" class="vol" type="range" min="0" max="10" value="5">
+                oninput="setVol(this.value, enchanted)" id="envol" class="vol" type="range" min="0" max="10" value="5">
             </div>
 
-              <div class="flex opt">
-                <input class="radio" oninput="toggleMusic(this, warmmemories, 'warmvol')" type="radio"  name="music">
-                <p>Warm Memories - Keys of Moon</p>
-                <input 
-                oninput="setVol(this.value, warmmemories)" id="warmvol" class="vol" type="range" min="0" max="10" value="5">
-            </div>
+            <div class="flex opt">
+              <input class="radio" oninput="toggleMusic(this, eternallove, 'etvol')" type="radio"  name="music">
+              <p>Eternal Love - Twisterium</p>
+              <input 
+              oninput="setVol(this.value, eternallove)" id="etvol" class="vol" type="range" min="0" max="10" value="5">
+          </div>
+
+            <div class="flex opt">
+              <input class="radio" oninput="toggleMusic(this, warmmemories, 'warmvol')" type="radio"  name="music">
+              <p>Warm Memories - Keys of Moon</p>
+              <input 
+              oninput="setVol(this.value, warmmemories)" id="warmvol" class="vol" type="range" min="0" max="10" value="5">
+          </div>
+              </div>
 
 
             <!-- JAzz -->
             <div class="flex opt2">
               <input class="radio" oninput="playlist(jazz)" type="radio"  name="music">
               <h2>Jazz Playlist</h2>
-              <input 
-              oninput="" class="vol" type="range" min="0" max="10" value="5">
+              <button class="dropdown" onclick="expand('jazzSongs', 'jazzListDrop')">
+                <i id="jazzListDrop" class="material-icons">expand_more</i>
+              </button>
           </div>
+          <div id="jazzSongs" style="display: none;">
+
             <div class="flex opt">
                 <input class="radio" oninput="toggleMusic(this, betonit, 'bevol')" type="radio"  name="music">
                 <p>Bet On It - Silent Partner</p>
@@ -392,15 +400,19 @@
                 <input 
                 oninput="setVol(this.value, nightfalling)" id="nivol" class="vol" type="range" min="0" max="10" value="5">
             </div>
+          </div>
 
             <!-- Ambience -->
 
             <div class="flex opt2">
               <input class="radio" oninput="playlist(ambience)" type="radio"  name="music">
               <h2>Ambience Playlist</h2>
-              <input 
-              oninput="" class="vol" type="range" min="0" max="10" value="5">
+              <button class="dropdown" onclick="expand('ambienceSongs', 'ambienceListDrop')">
+                <i id="ambienceListDrop" class="material-icons">expand_more</i>
+              </button>
           </div>
+          <div id="ambienceSongs" style="display: none;">
+
             <div class="flex opt">
                 <input class="radio" oninput="toggleMusic(this, ethereal, 'ethervol')" type="radio"  name="music">
                 <p>Ethereal - Punch Deck</p>
@@ -425,6 +437,7 @@
                 <input 
                 oninput="setVol(this.value, jul)" id="julvol" class="vol" type="range" min="0" max="10" value="5">
             </div>
+          </div>
 
             </div>
         </div>
