@@ -341,16 +341,16 @@ body {
 
   /* Box */
   75% {
-    width: 500px;
+    width: 400px;
   }
   87% {
-    width: 500px;
+    width: 400px;
     background-color: white;
   }
 
   89% {
     left: 47%;
-    width: 500px;
+    width: 400px;
   }
 
   /* Move right */
@@ -390,7 +390,7 @@ body {
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  width: 500px;
+  width: 400px;
   animation: fadeIn 5s ease-in-out 0s 1 normal none;
 }
 
@@ -553,15 +553,6 @@ p {
 
 /* Screen Sizes & Mobile Fixes */
 
-@media screen and (max-height: 700px) {
-  .app,
-  .title {
-    zoom: 65%;
-  }
-  #myVideo {
-    zoom: 10%;
-  }
-}
 
 @media screen and (min-width: 1500px) {
   @keyframes introLine {
@@ -594,21 +585,21 @@ p {
 
     /* Box */
     75% {
-      width: 500px;
+      width: 400px;
     }
     87% {
-      width: 500px;
+      width: 400px;
       background-color: white;
     }
 
     89% {
       left: 47.5%;
-      width: 500px;
+      width: 400px;
     }
 
     /* Move right */
     100% {
-      left: 90%;
+      left: 70%;
       width: 10px;
       background-color: white;
       height: 500px;
@@ -647,16 +638,16 @@ p {
 
     /* Box */
     75% {
-      width: 500px;
+      width: 400px;
     }
     87% {
-      width: 500px;
+      width: 400px;
       background-color: white;
     }
 
     89% {
       left: 47.3%;
-      width: 500px;
+      width: 400px;
     }
 
     /* Move right */
@@ -700,16 +691,16 @@ p {
 
     /* Box */
     75% {
-      width: 500px;
+      width: 300px;
     }
     87% {
-      width: 500px;
+      width: 300px;
       background-color: white;
     }
 
     89% {
       left: 46.4%;
-      width: 500px;
+      width: 300px;
     }
 
     /* Move right */
@@ -753,16 +744,16 @@ p {
 
     /* Box */
     75% {
-      width: 500px;
+      width: 400px;
     }
     87% {
-      width: 500px;
+      width: 400px;
       background-color: white;
     }
 
     89% {
       left: 46.5%;
-      width: 500px;
+      width: 400px;
     }
 
     /* Move right */
@@ -894,16 +885,16 @@ p {
 
     /* Box */
     75% {
-      width: 500px;
+      width: 400px;
     }
     87% {
-      width: 500px;
+      width: 400px;
       background-color: white;
     }
 
     89% {
       left: 47%;
-      width: 500px;
+      width: 400px;
     }
 
     /* Move right */
@@ -915,6 +906,17 @@ p {
     }
   }
 }
+
+@media screen and (max-height: 700px) {
+  .app,
+  .title {
+    zoom: 65%;
+  }
+  #myVideo {
+    zoom: 10%;
+  }
+}
+
 @media screen and (max-width: 720px) {
   @keyframes introLine {
     /* None */
@@ -922,7 +924,7 @@ p {
       background-color: rgba(255, 255, 255, 0);
       height: 10px;
       width: 10px;
-      left: 46%;
+      left: 44%;
     }
     8% {
       background-color: rgba(255, 255, 255, 0);
@@ -946,16 +948,16 @@ p {
 
     /* Box */
     75% {
-      width: 500px;
+      width: 400px;
     }
     87% {
-      width: 500px;
+      width: 400px;
       background-color: white;
     }
 
     89% {
-      left: 46%;
-      width: 500px;
+      left: 44%;
+      width: 400px;
     }
 
     /* Move right */
@@ -968,60 +970,7 @@ p {
   }
 }
 
-@media screen and (max-width: 400px) {
-  @keyframes introLine {
-    /* None */
-    0% {
-      background-color: rgba(255, 255, 255, 0);
-      height: 10px;
-      width: 10px;
-      left: 45.5%;
-    }
-    8% {
-      background-color: rgba(255, 255, 255, 0);
-    }
-
-    /* Dot */
-    20% {
-      background-color: white;
-    }
-    25% {
-      height: 10px;
-    }
-
-    /* Line */
-    50% {
-      height: 500px;
-    }
-    55% {
-      width: 10px;
-    }
-
-    /* Box */
-    75% {
-      width: 500px;
-    }
-    87% {
-      width: 500px;
-      background-color: white;
-    }
-
-    89% {
-      left: 45.5%;
-      width: 500px;
-    }
-
-    /* Move right */
-    100% {
-      left: 90%;
-      width: 10px;
-      background-color: white;
-      height: 500px;
-    }
-  }
-}
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   *{zoom: 94%;}
   #ss, #letters{
     zoom: unset;
@@ -1057,16 +1006,16 @@ p {
 
     /* Box */
     75% {
-      width: 500px;
+      width: 400px;
     }
     87% {
-      width: 500px;
+      width: 400px;
       background-color: white;
     }
 
     89% {
       left: 44%;
-      width: 500px;
+      width: 400px;
     }
 
     /* Move right */
