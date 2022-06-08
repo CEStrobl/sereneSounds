@@ -5,6 +5,10 @@ let app = document.getElementById("app");
 
 let skipIntro = false;
 
+let script = document.getElementById('script')
+if(script.src === 'file:///D:/Users/Admin/Documents/D%20drive%20code/sereneSounds/script.js') 
+{skipIntro = true}
+
 // Debugging Info
 document.getElementById("screenW").innerHTML = screen.width + "px";
 document.getElementById("screenH").innerHTML = screen.height + "px";
@@ -79,7 +83,7 @@ function getCoords(element) {
 const divElem = document.getElementById("musicTab");
 const volumes = divElem.querySelectorAll(".vol");
 
-console.log(volumes)
+// console.log(volumes)
 
 
 
@@ -95,11 +99,12 @@ function hello(thing) {
 
 
 let random = "";
+let randomIndex = "";
 
 let bgsTitle = [
   "snowfall",
-  "clouds",
-  "autumntrees",
+  "city",
+  "autumn2",
   "beach4",
   "beach2",
   "castle",
@@ -109,11 +114,18 @@ let bgsTitle = [
   "rain3",
   "shop1",
   "trees3",
+  'trees2',
   "window1",
+  'fantasyLake',
+  'treehouse',
+  'lake',
+  'winter1',
+  // 'winter2',
+  'winterIsland',
 ];
 
 let snowfall = 0;
-let autumntrees = 0;
+let autumn2 = 0;
 let beach4 = 0;
 let castle = 0;
 let rain1BG = 0;
@@ -186,6 +198,7 @@ function randomTitle() {
   vid.src = "img/live/" + bgsTitle[r] + ".mp4";
   vid2.src = "img/live/" + bgsTitle[r] + ".mp4";
   random = bgsTitle[r];
+  randomIndex = r
 }
 randomTitle();
 
@@ -236,7 +249,7 @@ function calcPoints(sound, x) {
     beach4 += x;
   }
   if (sound === wind) {
-    autumntrees += x;
+    autumn2 += x;
     snowfall += x;
     trees3 += x;
     rain3 += x;
@@ -251,7 +264,7 @@ function calcPoints(sound, x) {
     window1 += x;
   }
   if (sound === birdschirp) {
-    autumntrees += x;
+    autumn2 += x;
     trees3 += x;
   }
   if (sound === highway) {
@@ -336,6 +349,7 @@ function toggleMusic(checkID, sound, id) {
 
 function hideVid2(target) {
   vid2.style.opacity = 0;
+  changeColor(target)
   setTimeout(() => {
     vid2.src = "img/live/" + target + ".mp4";
   }, 800);
@@ -349,8 +363,9 @@ function hideVid2(target) {
 }
 
 function autoBackground() {
+  toggleSeeking(document.getElementById('seekBGIn'))
   var num = [
-    autumntrees,
+    autumn2,
     beach4,
     castle,
     rain1BG,
@@ -364,8 +379,8 @@ function autoBackground() {
 
   let x = max;
 
-  if (x === autumntrees) {
-    hideVid2("autumntrees");
+  if (x === autumn2) {
+    hideVid2("autumn2");
   } else if (x === beach4) {
     hideVid2("beach4");
   } else if (x === castle) {
@@ -474,3 +489,109 @@ function expand(songs, icon){
   }
 
 }
+
+p = randomIndex
+
+function toggleSeeking(parent) {
+  s = document.getElementById('seekBG')
+
+  if (parent.checked === true) {
+    s.style.opacity = 0;
+    setTimeout(() => {
+      s.style.display = "block";
+    }, 20);
+    setTimeout(() => {
+      s.style.opacity = 1;
+    }, 400);
+  } else {
+    s.style.opacity = 1;
+    setTimeout(() => {
+      s.style.opacity = 0;
+    }, 20);
+    setTimeout(() => {
+      s.style.display = "none";
+    }, 800);
+  }
+}
+toggleSeeking(document.getElementById('seekBGIn'))
+
+let paused = false
+
+function seek(mode) {
+  if (paused === false) {
+    if (mode === 'back') {
+      p--
+    }
+    else if(mode === 'next') {
+      p++
+    }
+  
+    if (p === -1) {
+      p = bgsTitle.length -1;
+    }
+    else if (p >= bgsTitle.length) {
+      p = 0;
+    }
+  }
+
+
+  hideVid2(bgsTitle[p])
+  changeColor(bgsTitle[p])
+}
+
+
+
+
+function changeColor(background) {
+  let x = background
+  let hex = ''
+
+  let lightPink = 'cb5a9d'
+  let darkPink = '4f1e3b'
+  let yellow = 'dee344'
+  let lightBlue = '48b3e0'
+  let dullBlue = '6270a1'
+  let deepBlue = '072060'
+  let orange = '944b16'
+  let redOrange = '87362d'
+  let green = '55c47d'
+
+  if (x === 'window1' || x === 'autumn2') {
+    hex = orange
+  } else if (x === 'beach4' || x === 'beach2' || x === 'treehouse') {
+    hex = lightBlue
+  } else if (x === 'castle' || x === 'city') {
+    hex = redOrange
+  } else if (x === 'rain1' || x === 'forest3') {
+    hex = dullBlue
+  } else if (x === 'snowfall' || x === 'winter1'  || x === 'winter2'
+  || x === 'winterIsland' || x === 'trees2') {
+    hex = lightBlue
+  } else if (x === 'shop1'|| x === 'trees3' ) {
+    hex = yellow
+  } else if (x === 'forest1' || x === 'rain3') {
+   hex = green
+  } else if (x === 'lake'|| x === 'fantasyLake') {
+    hex = lightPink
+  }
+ 
+  let v = document.getElementsByClassName('vol')
+  let c = document.getElementsByClassName('check')
+  let rad = document.getElementsByClassName('radio')
+  setTimeout(() => {
+    for (let i = 0; i < v.length; i++) {
+      const d = v[i];
+      d.style.setProperty('--sliderColor', "#"+ hex)
+    }
+    for (let i = 0; i < c.length; i++) {
+      const d = c[i];
+      d.style.setProperty('--checkColor', "#"+  hex)
+    }
+    for (let i = 0; i < rad.length; i++) {
+      const d = rad[i];
+      d.style.setProperty('--radColor', "#"+  hex)
+    }
+  }, 1000);
+}
+
+changeColor(random)

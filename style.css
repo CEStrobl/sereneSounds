@@ -54,16 +54,108 @@ body {
 
 /* Input */
 
+/* Volume sLider */
+.vol { 
+  --sliderColor: purple;
+  display: none;
+  -webkit-appearance: none;
+  overflow: hidden;
+  height: 10px;
+  width: 100px;
+  cursor: pointer;
+  transition-duration: 1s;
+  border-radius: 0; /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+  background: rgb(152, 152, 152);
+}
+
+/*
+* 1. Set to 0 width and remove border for a slider without a thumb
+* 2. Shadow is negative the full width of the input and has a spread 
+*    of the width of the input.
+*/
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 40px;
+  background: #fff;
+  box-shadow: -100px 0 0 100px var(--sliderColor); /* 2 */
+  transition-duration: 1s;
+}
+
+::-moz-range-track {
+  height: 40px;
+  background: rgb(152, 152, 152);
+}
+
+::-moz-range-thumb {
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  box-shadow: -100px 0 0 100px var(--sliderColor); /* 2 */
+  transition-duration: 1s;
+}
+
+::-ms-fill-lower { 
+  background: var(--sliderColor);
+  transition-duration: 1s;
+}
+
+::-ms-thumb { 
+  background: #fff;
+  width: 10px;
+  height: 40px;
+  transition-duration: 1s;
+  /* box-sizing: border-box; */
+}
+
+::-ms-ticks-after { 
+  display: none; 
+}
+
+::-ms-ticks-before { 
+  display: none; 
+}
+
+::-ms-track { 
+  background: rgb(152, 152, 152);
+  color: transparent;
+  height: 40px;
+  border: none;
+}
+
+::-ms-tooltip { 
+  display: none;
+}
+
+
+
+
+
+
 .check {
+  --checkColor: purple;
   width: 20px;
   height: 20px;
   margin-right: 20px;
+  transition-duration: 1s;
+}
+input[type="checkbox"]:checked {
+  accent-color: var(--checkColor);
 }
 
 .radio {
+  --radColor: purple;
   width: 20px;
   height: 20px;
   margin-right: 20px;
+  transition-duration: 1s;
+}
+
+input[type="radio"]:checked {
+  accent-color: var(--radColor);
 }
 
 .dropdown {
@@ -71,6 +163,12 @@ body {
   border-color: transparent;
   border: none;
   border-radius: 50%;
+}
+
+i{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 /* Debugging */
@@ -475,46 +573,9 @@ body {
   margin-left: 10px;
 }
 
-.vol {
-  display: none;
-  -webkit-appearance: none;
-  width: 100px;
-  height: 10px;
-  border-radius: 3px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-}
 
-.vol:hover {
-  opacity: 1;
-}
 
-.vol::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #04aa6d;
-  cursor: pointer;
-}
 
-.vol::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.check {
-  /* height: 125%;
-    width: 125%; */
-  height: 25px;
-  width: 25px;
-}
 .column {
   flex-direction: column;
   margin: 20px;
