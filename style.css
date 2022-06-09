@@ -969,10 +969,10 @@ p {
 }
 
 @media screen and (max-height: 700px) {
-  .app,
+  /* .app,
   .title {
     zoom: 65%;
-  }
+  } */
   #myVideo {
     zoom: 10%;
   }
